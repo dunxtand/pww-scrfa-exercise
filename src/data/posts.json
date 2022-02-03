@@ -1,0 +1,42 @@
+[
+    {
+        "id": 1,
+        "title": "Local Government Finance",
+        "link": "/local-government-finance",
+        "text": "Vestibulum rutrum quam vitae fringilla tincidunt. Suspendisse nec tortor una. Ut laoreet sodales.",
+        "published": "1/2/2020",
+        "tags": [1]
+    },
+    {
+        "id": 2,
+        "title": "Transportation Network Carrier Maps",
+        "link": "/transportation-network-carrier-maps",
+        "text": null,
+        "published": "1/2/2020",
+        "tags": [2]
+    },
+    {
+        "id": 3,
+        "title": "BEA Long-Range General Fund Revenue Plan for FY 2019-20 to FY 2022-23",
+        "link": "/bea-long-range-general-fund-revenue-plan",
+        "text": "Vestibulum rutrum quam vitae fringilla tincidunt. Suspendisse nec tortor una. Ut laoreet sodales.",
+        "published": "12/16/2019",
+        "tags": [1]
+    },
+    {
+        "id": 4,
+        "title": "Budget Development",
+        "link": "/budget-development",
+        "text": null,
+        "published": "12/16/2019",
+        "tags": [2]
+    },
+    {
+        "id": 5,
+        "title": "November 2019 General Fund Revenue Digest",
+        "link": "/november-2019-general-fund-revenue-digest",
+        "text": null,
+        "published": "12/16/2019",
+        "tags": [2]
+    }
+]

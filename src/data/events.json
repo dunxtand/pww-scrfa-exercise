@@ -1,0 +1,34 @@
+[
+    {
+        "id": 1,
+        "title": "Board of Economic Advisors Meeting",
+        "location": "Room 417, Bowers Conference Room, Rembert Dennis Building",
+        "date": "11/22/2020 13:30",
+        "phone": "(803) 734-2262",
+        "tags": [1]
+    },
+    {
+        "id": 2,
+        "title": "Board of Economic Advisors Meeting",
+        "location": "Room 417, Bowers Conference Room, Rembert Dennis Building",
+        "date": "11/23/2020 13:30",
+        "phone": "(803) 734-2262",
+        "tags": [3]
+    },
+    {
+        "id": 1,
+        "title": "Board of Economic Advisors Meeting",
+        "location": "Room 417, Bowers Conference Room, Rembert Dennis Building",
+        "date": "11/22/2020 13:30",
+        "phone": "(803) 734-2262",
+        "tags": []
+    },
+    {
+        "id": 1,
+        "title": "Board of Economic Advisors Meeting",
+        "location": "Room 417, Bowers Conference Room, Rembert Dennis Building",
+        "date": "11/22/2020 13:30",
+        "phone": "(803) 734-2262",
+        "tags": []
+    }
+]
