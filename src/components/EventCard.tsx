@@ -1,3 +1,4 @@
+import Tag from './Tag';
 import { tags } from '../data';
 
 
@@ -33,12 +34,10 @@ export default function EventCard(props: Props): JSX.Element {
                         const tag = tags.find(tag => tag.id === tagId);
 
                         return !tag ? null : (
-                            <div
-                                className="text-white"
-                                style={{ backgroundColor: tag.color ?? '' }}
-                            >
-                                {tag.title}
-                            </div>
+                            <Tag
+                                key={index}
+                                tag={tag}
+                            />
                         );
                     })}
                 </div>

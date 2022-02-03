@@ -1,21 +1,23 @@
-import React from 'react';
+import { colorKey } from '../style-variables';
 
 
 interface Props {
-    title: string;
-    color?: string;
+    tag: Tag;
+    bgColor?: string;
 }
 
 
 export default function Tag(props: Props) {
     const {
-        title,
-        color = '#757575'
+        tag,
+        bgColor
     } = props;
 
+    const backgroundColor = colorKey[bgColor ?? tag.color ?? 'sidewalk'];
+
     return (
-        <div style={{ backgroundColor: color }}>
-            {title}
+        <div style={{ backgroundColor }}>
+            {tag.title}
         </div>
     );
 }

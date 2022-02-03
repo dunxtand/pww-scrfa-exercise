@@ -1,6 +1,6 @@
 import React from 'react';
 import styled, { css } from 'styled-components'
-import { $lg } from '../style-variables'
+import { $lg, ocean, lake, river } from '../style-variables'
 
 
 export interface MenuHamburgerFields {
@@ -28,7 +28,7 @@ const Hamburger = styled.a<{ open: boolean }>`
     position: relative;
     right: 0;
     top: 0;
-    background-color: #3068ad;
+    background-color: ${river};
     overflow: hidden;
     padding: 12px;
     transition-duration: 0.15s;
@@ -40,7 +40,7 @@ const Hamburger = styled.a<{ open: boolean }>`
         width: 100%;
         height: 100%;
         content: "";
-        background-color: ${props => props.open ? '#1b3a61' : '#225089'};
+        background-color: ${props => props.open ? ocean : lake};
         position: absolute;
         transform: translateY(100%);
         transition: all .2s ease-in-out;

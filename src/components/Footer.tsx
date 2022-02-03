@@ -1,9 +1,10 @@
 import styled from 'styled-components';
+import { ocean } from '../style-variables';
 import { footer, pages } from '../data';
 
 
 const Wrapper = styled.div`
-    background-color: #1b3a61;
+    background-color: ${ocean};
     color: #fff;
 `;
 

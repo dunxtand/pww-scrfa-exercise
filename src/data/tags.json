@@ -2,7 +2,7 @@
     {
         "id": 1,
         "title": "Updated",
-        "color": "#d2b859"
+        "color": "honey"
     },
     {
         "id": 2,
@@ -12,6 +12,6 @@
     {
         "id": 3,
         "title": "Cancelled",
-        "color": "#e9261b"
+        "color": "ladybug"
     }
 ]

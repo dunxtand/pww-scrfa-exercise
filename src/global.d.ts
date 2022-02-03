@@ -26,5 +26,6 @@ interface SCRFAEvent {
 
 interface Tag {
     id: number;
+    title: string;
     color: string | null;
 }

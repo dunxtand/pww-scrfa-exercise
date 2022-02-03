@@ -1,4 +1,5 @@
 import Link from './Link';
+import Tag from './Tag';
 import { tags } from '../data';
 
 
@@ -34,9 +35,11 @@ export default function PostCard(props: Props): JSX.Element {
                     const tag = tags.find(tag => tag.id === tagId);
 
                     return !tag ? null : (
-                        <div className="bg-black text-white">
-                            {tag.title}
-                        </div>
+                        <Tag
+                            key={index}
+                            tag={tag}
+                            bgColor='sidewalk'
+                        />
                     );
                 })}
             </div>
