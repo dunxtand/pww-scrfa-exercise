@@ -6,6 +6,7 @@ type ButtonTypes = 'stroke' | 'solid';
 
 interface Props {
     type: ButtonTypes;
+    href: string;
     disabled?: boolean;
     children: React.ReactNode;
 }
