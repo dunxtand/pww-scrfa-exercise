@@ -3,258 +3,301 @@
         "id": 1,
         "title": "Home",
         "link": "/",
-        "parentId": null
+        "parentId": null,
+        "icon": null
     },
     {
         "id": 2,
         "title": "About Us",
         "link": "/about",
-        "parentId": null
+        "parentId": null,
+        "icon": null
     },
     {
         "id": 3,
         "title": "News & Events",
         "link": "/news",
-        "parentId": null
+        "parentId": null,
+        "icon": null
     },
     {
         "id": 4,
         "title": "Events",
         "link": "/events",
-        "parentId": null
+        "parentId": null,
+        "icon": null
     },
     {
         "id": 5,
         "title": "Contact Us",
         "link": "/contact",
-        "parentId": null
+        "parentId": null,
+        "icon": null
     },
     {
         "id": 6,
         "title": "Boards & Committees",
         "link": "/boards-committees",
-        "parentId": null
+        "parentId": null,
+        "icon": null
     },
     {
         "id": 7,
         "title": "Data & Research",
         "link": "/data-research",
-        "parentId": null
+        "parentId": null,
+        "icon": "data-research"
     },
     {
         "id": 8,
         "title": "Economy",
         "link": "/economy",
-        "parentId": 7
+        "parentId": 7,
+        "icon": null
     },
     {
         "id": 9,
         "title": "State Finances",
         "link": "/state-finances",
-        "parentId": 7
+        "parentId": 7,
+        "icon": null
     },
     {
         "id": 10,
         "title": "Education",
         "link": "/education",
-        "parentId": 7
+        "parentId": 7,
+        "icon": null
     },
     {
         "id": 11,
         "title": "Healthcare",
         "link": "/healthcare",
-        "parentId": 7
+        "parentId": 7,
+        "icon": null
     },
     {
         "id": 12,
         "title": "Local Government",
         "link": "/local-government",
-        "parentId": 7
+        "parentId": 7,
+        "icon": null
     },
     {
         "id": 13,
         "title": "Population and Demographics",
         "link": "/population-demographics",
-        "parentId": 7
+        "parentId": 7,
+        "icon": null
     },
     {
         "id": 14,
         "title": "State Register Calculations",
         "link": "/state-register-calculations",
-        "parentId": 7
+        "parentId": 7,
+        "icon": null
     },
     {
         "id": 15,
         "title": "Presentations",
         "link": "/presentations",
-        "parentId": 7
+        "parentId": 7,
+        "icon": null
     },
     {
         "id": 16,
         "title": "Geography & Mapping",
         "link": "/geography-mapping",
-        "parentId": null
+        "parentId": null,
+        "icon": "geography"
     },
     {
         "id": 17,
         "title": "Transportation Carrier Network (Uber)",
         "link": "/transportation-carrier-network",
-        "parentId": 16
+        "parentId": 16,
+        "icon": null
     },
     {
         "id": 18,
         "title": "SC Real Time Network",
         "link": "/sc-real-time-network",
-        "parentId": 16
+        "parentId": 16,
+        "icon": null
     },
     {
         "id": 19,
         "title": "SC State GIS",
         "link": "/sc-state-gis",
-        "parentId": 16
+        "parentId": 16,
+        "icon": null
     },
     {
         "id": 20,
         "title": "Maps",
         "link": "/maps",
-        "parentId": 16
+        "parentId": 16,
+        "icon": null
     },
     {
         "id": 21,
         "title": "Interactive Mapping",
         "link": "/interactive-mapping",
-        "parentId": 16
+        "parentId": 16,
+        "icon": null
     },
     {
         "id": 22,
         "title": "Statewide Aerial Imagery",
         "link": "/statewide-aerial-imagery",
-        "parentId": 16
+        "parentId": 16,
+        "icon": null
     },
     {
         "id": 23,
         "title": "Programs & Services",
         "link": "/programs-services",
-        "parentId": null
+        "parentId": null,
+        "icon": "programs"
     },
     {
         "id": 24,
         "title": "Precinct Demographics and Redistricting",
         "link": "/precinct-demographics-redistricting",
-        "parentId": 23
+        "parentId": 23,
+        "icon": null
     },
     {
         "id": 25,
         "title": "State 911 Programm",
         "link": "/state-911-program",
-        "parentId": 23
+        "parentId": 23,
+        "icon": null
     },
     {
         "id": 26,
         "title": "Data Services and Online Solutions",
         "link": "/data-services-online-solutions",
-        "parentId": 23
+        "parentId": 23,
+        "icon": null
     },
     {
         "id": 27,
         "title": "Geodetic Survey",
         "link": "/geodetic-survey",
-        "parentId": 23
+        "parentId": 23,
+        "icon": null
     },
     {
         "id": 28,
         "title": "Fiscal Analysis",
         "link": "/fiscal-analysis",
-        "parentId": 23
+        "parentId": 23,
+        "icon": null
     },
     {
         "id": 29,
         "title": "2020 Census",
         "link": "/2020-census",
-        "parentId": 23
+        "parentId": 23,
+        "icon": null
     },
     {
         "id": 30,
         "title": "Legislative Fiscal Impacts",
         "link": "/legislative-fiscal-impacts",
-        "parentId": null
+        "parentId": null,
+        "icon": "legislative"
     },
     {
         "id": 31,
         "title": "Current General Assembly Session",
         "link": "/current-general-assembly-session",
-        "parentId": 30
+        "parentId": 30,
+        "icon": null
     },
     {
         "id": 32,
         "title": "Previous General Assembly Session",
         "link": "/previous-general-assembly-session",
-        "parentId": 30
+        "parentId": 30,
+        "icon": null
     },
     {
         "id": 33,
         "title": "Forms",
         "link": "/forms",
-        "parentId": 30
+        "parentId": 30,
+        "icon": null
     },
     {
         "id": 34,
         "title": "Overview and History of the South Carolina State Budget",
         "link": "/overview-history-south-carolina-state-budget",
-        "parentId": null
+        "parentId": null,
+        "icon": null
     },
     {
         "id": 35,
         "title": "Employer Contribution Trends",
         "link": "/employer-contribution-trends",
-        "parentId": null
+        "parentId": null,
+        "icon": null
     },
     {
         "id": 36,
         "title": "Appropriation Bills and Acts",
         "link": "/appropriation-bills-acts",
-        "parentId": null
+        "parentId": null,
+        "icon": null
     },
     {
         "id": 37,
         "title": "Employer Contribution Trends - June 4, 2019",
         "link": "/employer-contribution-trends-june-4-2019",
-        "parentId": null
+        "parentId": null,
+        "icon": null
     },
     {
         "id": 38,
         "title": "Executive Budget Office State Agency Budget Plans (Request)",
         "link": "/executive-budget-office-state-agency-budget-plans-request",
-        "parentId": null
+        "parentId": null,
+        "icon": null
     },
     {
         "id": 39,
         "title": "Privacy Statement",
         "link": "/privacy-statement",
-        "parentId": null
+        "parentId": null,
+        "icon": null
     },
     {
         "id": 40,
         "title": "FOIA",
         "link": "/foia",
-        "parentId": null
+        "parentId": null,
+        "icon": null
     },
     {
         "id": 41,
         "title": "Disclosures and Reporting",
         "link": "/disclosures-reporting",
-        "parentId": null
+        "parentId": null,
+        "icon": null
     },
     {
         "id": 42,
         "title": "Report Fraud",
         "link": "/report-fraud",
-        "parentId": null
+        "parentId": null,
+        "icon": null
     },
     {
         "id": 43,
         "title": "Accessibility",
         "link": "/accessibility",
-        "parentId": null
+        "parentId": null,
+        "icon": null
     }
 ]

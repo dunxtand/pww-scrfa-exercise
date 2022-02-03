@@ -1,26 +1,18 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Menus from './components/Menus';
+import Hero from './components/Hero';
+import Popular from './components/Popular';
+import News from './components/News';
+import Footer from './components/Footer';
 
-function App() {
+
+export default function App(): JSX.Element {
   return (
-    <div className="App mt-10">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Menus/>
+      <Hero/>
+      <Popular/>
+      <News/>
+      <Footer/>
+    </>
   );
 }
-
-export default App;

@@ -3,18 +3,19 @@ interface Page {
     title: string;
     link: string;
     parentId: number | null;
+    icon: string | null;
 }
 
 interface Post {
     id: number;
     title: string;
     link: string;
-    text: string;
+    text: string | null;
     published: string;
     tags: number[];
 }
 
-interface Event {
+interface SCRFAEvent {
     id: number;
     title: string;
     location: string;

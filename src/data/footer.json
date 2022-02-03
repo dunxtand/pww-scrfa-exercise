@@ -1,4 +1,21 @@
 {
-    "title": "South Carolina Revenue and Fiscal Affairs Office",
-    "pages": [39, 40, 41, 42, 43, 5]
+    "title": "South Carolina<br/>Revenue and Fiscal Affairs Office",
+    "pages": [39, 40, 41, 42, 43, 5],
+    "addresses": [
+        {
+            "title": "Main Office",
+            "line1": "1000 Assembly St, Rembert Dennis Building, Suite 421",
+            "line2": "Columbia, SC 29201"
+        },
+        {
+            "title": "Geodetic Survey Section",
+            "line1": "5 Geology Rd",
+            "line2": "Columbia, SC 29201"
+        },
+        {
+            "title": "Health and Demographics Division",
+            "line1": "1000 Assembly St, Rembert Dennis Building, Suite 421",
+            "line2": "Columbia, SC 29201"
+        }
+    ]
 }
