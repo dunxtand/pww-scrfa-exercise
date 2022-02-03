@@ -2,18 +2,15 @@ import React from 'react';
 import styled from 'styled-components';
 
 
-interface Props {
-    href: string;
-    children: React.ReactNode;
-}
-
-
 const StyledLink = styled.a`
 
 `;
 
 
-export default function Link(props: Props): JSX.Element {
+export default function Link(props: {
+    href: string;
+    children: React.ReactNode;
+}): JSX.Element {
     const {
         href,
         children

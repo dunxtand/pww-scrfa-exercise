@@ -5,14 +5,6 @@ import { $md, $lg } from '../style-variables';
 import { header, pages } from '../data';
 
 
-interface Props {
-  searchOpen: boolean;
-  setSearchOpen: React.Dispatch<React.SetStateAction<boolean>>;
-  menuOpen: boolean;
-  setMenuOpen: React.Dispatch<React.SetStateAction<boolean>>;
-}
-
-
 export const DK_MENU_ID = 'dk-menu';
 export const DK_MENU_HIDDEN_CLASS = 'fold-up';
 
@@ -83,7 +75,12 @@ const LogoImage = styled.img`
 `;
 
 
-export default function DesktopMenu(props: Props): JSX.Element {
+export default function DesktopMenu(props: {
+  searchOpen: boolean;
+  setSearchOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  menuOpen: boolean;
+  setMenuOpen: React.Dispatch<React.SetStateAction<boolean>>;
+}): JSX.Element {
   const {
     searchOpen,
     setSearchOpen,

@@ -2,12 +2,9 @@ import Tag from './Tag';
 import { tags } from '../data';
 
 
-interface Props {
+export default function EventCard(props: {
     event: SCRFAEvent;
-}
-
-
-export default function EventCard(props: Props): JSX.Element {
+}): JSX.Element {
     const {
         event
     } = props;

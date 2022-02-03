@@ -2,12 +2,9 @@ import PostCard from './PostCard';
 import { posts } from '../data';
 
 
-interface Props {
+export default function Posts(props: {
     className?: string;
-}
-
-
-export default function Posts(props: Props): JSX.Element {
+}): JSX.Element {
     const {
         className = ''
     } = props;

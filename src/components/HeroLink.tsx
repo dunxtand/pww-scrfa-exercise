@@ -1,13 +1,9 @@
-import React from 'react';
 import SVG from 'react-inlinesvg';
 
 
-interface Props {
+export default function HeroLink(props: {
     page?: Page;
-}
-
-
-export default function HeroLink(props: Props): JSX.Element | null {
+}): JSX.Element | null {
     const { page = null } = props;
 
     return !page ? null : (

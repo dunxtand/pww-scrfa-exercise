@@ -1,13 +1,10 @@
 import { colorKey } from '../style-variables';
 
 
-interface Props {
+export default function Tag(props: {
     tag: Tag;
     bgColor?: string;
-}
-
-
-export default function Tag(props: Props) {
+}) {
     const {
         tag,
         bgColor

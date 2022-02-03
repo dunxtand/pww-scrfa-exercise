@@ -4,13 +4,6 @@ import styled from 'styled-components';
 
 type ButtonTypes = 'stroke' | 'solid';
 
-interface Props {
-    type: ButtonTypes;
-    href: string;
-    disabled?: boolean;
-    children: React.ReactNode;
-}
-
 
 const StyledButton = styled.a<{
     type: ButtonTypes;
@@ -20,7 +13,12 @@ const StyledButton = styled.a<{
 `;
 
 
-export default function Button (props: Props): JSX.Element {
+export default function Button (props: {
+    type: ButtonTypes;
+    href: string;
+    disabled?: boolean;
+    children: React.ReactNode;
+}): JSX.Element {
     const {
         type = 'stroke',
         disabled = false,

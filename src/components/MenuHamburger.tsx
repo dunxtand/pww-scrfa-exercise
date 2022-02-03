@@ -3,11 +3,6 @@ import styled, { css } from 'styled-components'
 import { $lg, ocean, lake, river } from '../style-variables'
 
 
-export interface MenuHamburgerFields {
-    open: boolean
-    toggleOpen: () => void;
-}
-
 const Wrapper = styled.div`
     padding: 0;
     text-align: right;
@@ -106,7 +101,10 @@ const Hamburger = styled.a<{ open: boolean }>`
 `;
 
 
-export default function MenuHamburger(props: MenuHamburgerFields): JSX.Element | null {
+export default function MenuHamburger(props: {
+    open: boolean
+    toggleOpen: () => void;
+}): JSX.Element | null {
     return (
         <Wrapper id="hamburgerWrapper">
             <Hamburger 

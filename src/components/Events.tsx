@@ -2,12 +2,9 @@ import EventCard from './EventCard';
 import { events } from '../data';
 
 
-interface Props {
+export default function Events(props: {
     className?: string;
-}
-
-
-export default function Events(props: Props): JSX.Element {
+}): JSX.Element {
     const {
         className = ''
     } = props;

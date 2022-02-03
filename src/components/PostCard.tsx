@@ -3,12 +3,9 @@ import Tag from './Tag';
 import { tags } from '../data';
 
 
-interface Props {
+export default function PostCard(props: {
     post: Post;
-}
-
-
-export default function PostCard(props: Props): JSX.Element {
+}): JSX.Element {
     const { post } = props;
 
     const date = new Date(post.published);

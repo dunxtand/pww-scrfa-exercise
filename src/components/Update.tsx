@@ -1,12 +1,8 @@
-import React from 'react';
 import Link from './Link';
 
 
-interface Props {
+export default function Update(props: {
     post: Post;
-}
-
-
-export default function Update(props: Props): JSX.Element {
+}): JSX.Element {
     return <></>;
 }
