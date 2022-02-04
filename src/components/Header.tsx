@@ -1,8 +1,8 @@
 import React, { useEffect, useState, useRef } from 'react';
 import styled from 'styled-components';
 import MenuHamburger from './MenuHamburger';
+import { useData } from '../hooks';
 import { $md, $lg } from '../style-variables';
-import { header, pages } from '../data';
 
 
 export const DK_MENU_ID = 'dk-menu';
@@ -95,6 +95,9 @@ export default function DesktopMenu(props: {
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [atTop, setAtTop] = useState(true);
 
+  const headerData = useData('header');
+  const pages = useData('pages');
+
   // initial load: set scroll listener
   useEffect(() => {
     setAtTop(document.documentElement.scrollTop === 0);
@@ -163,10 +166,10 @@ export default function DesktopMenu(props: {
                     alt="SCRFA seal"
                 />
                 <div className="flex flex-col text-black">
-                    <h2 dangerouslySetInnerHTML={{ __html: header.title }}/>
+                    <h2 dangerouslySetInnerHTML={{ __html: headerData?.title ?? '' }}/>
                     <span
                         className="italic"
-                        dangerouslySetInnerHTML={{ __html: header.subtitle }}
+                        dangerouslySetInnerHTML={{ __html: headerData?.subtitle ?? '' }}
                     />
                 </div>
             </a>
@@ -174,10 +177,10 @@ export default function DesktopMenu(props: {
 
         <div className="flex">
             <div className="flex text-black">
-                {header.menu.pages.map((pageId, index) => {
-                    const page = pages.find(page => page.id === pageId);
+                {headerData?.menu?.pages.map((pageId: number, index: number) => {
+                    const page: Page = pages?.find((p: Page) => p.id === pageId);
 
-                    return (
+                    return !page ? null : (
                         <a
                             key={index}
                             href={page?.link}

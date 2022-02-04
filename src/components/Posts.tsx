@@ -1,5 +1,5 @@
 import PostCard from './PostCard';
-import { posts } from '../data';
+import { useData } from '../hooks';
 
 
 export default function Posts(props: {
@@ -9,9 +9,11 @@ export default function Posts(props: {
         className = ''
     } = props;
 
+    const posts = useData('posts');
+
     return (
         <div className={`flex flex-col ${className}`}>
-            {posts.map((post: Post, index) => (
+            {posts?.map((post: Post, index: number) => (
                 <PostCard
                     key={index}
                     post={post}

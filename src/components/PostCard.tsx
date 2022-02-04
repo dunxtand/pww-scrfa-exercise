@@ -1,12 +1,14 @@
 import Link from './Link';
 import Tag from './Tag';
-import { tags } from '../data';
+import { useData } from '../hooks';
 
 
 export default function PostCard(props: {
     post: Post;
 }): JSX.Element {
     const { post } = props;
+
+    const tags = useData('tags');
 
     const date = new Date(post.published);
     const formattedDate = date.toLocaleString('default', {
@@ -29,7 +31,7 @@ export default function PostCard(props: {
                     <span>{formattedDate}</span>
                 </div>
                 {post.tags.map((tagId, index) => {
-                    const tag = tags.find(tag => tag.id === tagId);
+                    const tag: Tag = tags?.find((t: Tag) => t.id === tagId);
 
                     return !tag ? null : (
                         <Tag

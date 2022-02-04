@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { ocean } from '../style-variables';
-import { footer, pages } from '../data';
+import { useData } from '../hooks';
 
 
 const Wrapper = styled.div`
@@ -10,16 +10,19 @@ const Wrapper = styled.div`
 
 
 export default function Footer(): JSX.Element {
+    const footerData = useData('footer');
+    const pages = useData('pages');
+
     return (
         <Wrapper className="p-4 flex justify-between">
             <div className="w-1/3 flex flex-col">
-                <h4 dangerouslySetInnerHTML={{ __html: footer.title }}/>
+                <h4 dangerouslySetInnerHTML={{ __html: footerData?.title ?? '' }}/>
                 {/** logo image goes here */}
             </div>
 
             <div className="w-1/3 flex flex-col">
-                {footer.pages.map((pageId, index) => {
-                    const page = pages.find(page => page.id === pageId);
+                {footerData?.pages?.map((pageId: number, index: number) => {
+                    const page = pages?.find((p: Page) => p.id === pageId);
 
                     return !page ? null : (
                         <a
@@ -33,7 +36,7 @@ export default function Footer(): JSX.Element {
             </div>
 
             <div className="w-1/3">
-                {footer.addresses.map((address, index) => (
+                {footerData?.addresses?.map((address: any, index: number) => (
                     <div
                         key={index}
                         className="flex flex-col"

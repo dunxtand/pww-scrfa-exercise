@@ -1,17 +1,20 @@
 import Link from './Link';
-import { popular, pages } from '../data';
+import { useData } from '../hooks';
 
 
 export default function Popular(): JSX.Element {
+    const popularData = useData('popular');
+    const pages = useData('pages');
+
     return (
         <section className="w-full">
             <h2
                 className="w-full"
-                dangerouslySetInnerHTML={{ __html: popular.title }}
+                dangerouslySetInnerHTML={{ __html: popularData?.title ?? '' }}
             />
             <div className="flex flex-wrap">
-                {popular.links.pages.map((pageId, index) => {
-                    const page = pages.find(page => page.id === pageId) ?? null;
+                {popularData?.links?.pages.map((pageId: number, index: number) => {
+                    const page: Page = pages?.find((p: Page) => p.id === pageId);
 
                     return !page ? null : (
                         <Link

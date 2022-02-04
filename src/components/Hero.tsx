@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Button from './Button';
 import HeroLink from './HeroLink';
-import { hero, pages } from '../data';
+import { useData } from '../hooks';
 
 
 const Wrapper = styled.div`
@@ -14,6 +14,9 @@ const Wrapper = styled.div`
 
 
 export default function Hero(): JSX.Element {
+    const heroData = useData('hero');
+    const pages = useData('pages');
+
     return (
         <Wrapper className="h-screen w-full relative">
             <div className="relative flex justify-center items-center">
@@ -28,7 +31,7 @@ export default function Hero(): JSX.Element {
                     className="relative flex justify-center items-center"
                 >
                     <h1
-                        dangerouslySetInnerHTML={{ __html: hero.text }}
+                        dangerouslySetInnerHTML={{ __html: heroData?.text ?? '' }}
                         className="text-white"
                     />
                 </div>
@@ -40,8 +43,8 @@ export default function Hero(): JSX.Element {
             </div>
             
             <div className="w-full flex justify-between mx-4">
-                {hero.links.pages.map((pageId, index) => {
-                    const page = pages.find(page => page.id === pageId);
+                {heroData?.links?.pages.map((pageId: number, index: number) => {
+                    const page: Page = pages?.find((p: Page) => p.id === pageId);
 
                     return (
                         <HeroLink

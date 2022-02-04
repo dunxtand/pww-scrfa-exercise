@@ -1,13 +1,13 @@
 import Tag from './Tag';
-import { tags } from '../data';
+import { useData } from '../hooks';
 
 
 export default function EventCard(props: {
     event: SCRFAEvent;
 }): JSX.Element {
-    const {
-        event
-    } = props;
+    const { event } = props;
+
+    const tags = useData('tags');
 
     const date = new Date(event.date);
     const month = date.toLocaleString('default', { month: 'short' });
@@ -28,7 +28,7 @@ export default function EventCard(props: {
             <div className="flex flex-col">
                 <div className="flex">
                     {event.tags.map((tagId, index) => {
-                        const tag = tags.find(tag => tag.id === tagId);
+                        const tag: Tag = tags?.find((t: Tag) => t.id === tagId);
 
                         return !tag ? null : (
                             <Tag
