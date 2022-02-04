@@ -143,7 +143,7 @@ export default function DesktopMenu(props: {
       color={'#fff'}
       bgColor={'#fff'}
       atTop={atTop}
-      className={`fixed top-0 w-full ${(!atTop && !searchOpen && !menuOpen) ? 'shadow-md' : ''} ${!show ? DK_MENU_HIDDEN_CLASS : ''}`}
+      className={`fixed top-0 w-full shadow-md ${(!atTop && !searchOpen && !menuOpen) ? 'shadow-md' : ''} ${!show ? DK_MENU_HIDDEN_CLASS : ''}`}
       ref={headerRef}
     >
       <div className="w-full flex justify-between items-center">

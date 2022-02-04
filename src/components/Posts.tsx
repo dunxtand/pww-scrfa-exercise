@@ -20,7 +20,7 @@ export default function Posts(props: {
                 Recent Updates
             </NewsTitle>
 
-            <div className="flex flex-col mt-10 lg:pr-20">
+            <div className="flex flex-col mt-10 md:pr-10 lg:pr-20">
                 {posts?.map((post: Post, index: number) => (
                     <PostCard
                         key={index}
