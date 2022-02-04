@@ -49,7 +49,7 @@ export default function Hero(): JSX.Element {
                 />
             </div>
             
-            <LinkWrapper className="w-full flex flex-wrap justify-center lg:justify-between py-12 px-32">
+            <LinkWrapper className="w-full flex flex-wrap justify-center lg:justify-between py-12 px-10 sm:px-16 md:px-20 lg:px-32">
                 {heroData?.links?.pages?.map((pageId: number, index: number) => {
                     const page: Page = pages?.find((p: Page) => p.id === pageId);
 

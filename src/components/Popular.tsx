@@ -16,7 +16,7 @@ export default function Popular(): JSX.Element {
     const pages = useData('pages');
 
     return (
-        <section className="w-full px-32 py-12">
+        <section className="w-full px-10 sm:px-16 md:px-20 lg:px-32 py-12">
             <Title
                 className="w-full font-black"
                 dangerouslySetInnerHTML={{ __html: popularData?.title ?? '' }}
