@@ -14,7 +14,7 @@ export default function Footer(): JSX.Element {
     const pages = useData('pages');
 
     return (
-        <Wrapper className="p-4 flex justify-between">
+        <Wrapper className="px-32 py-4 flex justify-between">
             <div className="w-1/3 flex flex-col">
                 <h4 dangerouslySetInnerHTML={{ __html: footerData?.title ?? '' }}/>
                 {/** logo image goes here */}

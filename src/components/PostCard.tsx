@@ -5,8 +5,12 @@ import { useData } from '../hooks';
 
 export default function PostCard(props: {
     post: Post;
+    className?: string;
 }): JSX.Element {
-    const { post } = props;
+    const {
+        post,
+        className = ''
+    } = props;
 
     const tags = useData('tags');
 
@@ -18,16 +22,22 @@ export default function PostCard(props: {
     });
 
     return (
-        <div className="flex flex-col">
-            <Link href={post.link}>
+        <div className={`flex flex-col ${className}`}>
+            <Link
+                href={post.link}
+                className="mb-3"
+            >
                 {post.title}
             </Link>
             {post.text && (
-                <div dangerouslySetInnerHTML={{ __html: post.text }}/>
+                <div
+                    dangerouslySetInnerHTML={{ __html: post.text }}
+                    className="mb-2"
+                />
             )}
             <div className="flex">
                 <div>
-                    <span className="text-bold">Published:</span>
+                    <span className="text-bold mr-1">Published:</span>
                     <span>{formattedDate}</span>
                 </div>
                 {post.tags.map((tagId, index) => {
@@ -37,7 +47,8 @@ export default function PostCard(props: {
                         <Tag
                             key={index}
                             tag={tag}
-                            bgColor='sidewalk'
+                            bgColor="sidewalk"
+                            className="mx-2"
                         />
                     );
                 })}

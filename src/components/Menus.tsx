@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Header from './Header';
+import Menu from './Menu';
 
 
 export default function Menus(): JSX.Element {
@@ -16,6 +17,7 @@ export default function Menus(): JSX.Element {
                 menuOpen={menuOpen}
                 setMenuOpen={setMenuOpen}
             />
+            <Menu open={menuOpen}/>
         </>
     );
 }

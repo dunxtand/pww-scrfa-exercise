@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import Button from './Button';
 import HeroLink from './HeroLink';
 import { useData } from '../hooks';
+import { steel } from '../style-variables';
 
 
 const Wrapper = styled.div`
@@ -12,13 +13,19 @@ const Wrapper = styled.div`
     }
 `;
 
+const LinkWrapper = styled.div`
+    background-color: ${steel};
+    height: 100%;
+    width: 100%;
+`;
+
 
 export default function Hero(): JSX.Element {
     const heroData = useData('hero');
     const pages = useData('pages');
 
     return (
-        <Wrapper className="h-screen w-full relative">
+        <Wrapper className="w-full relative">
             <div className="relative flex justify-center items-center">
                 <div
                     style={{
@@ -42,18 +49,24 @@ export default function Hero(): JSX.Element {
                 />
             </div>
             
-            <div className="w-full flex justify-between mx-4">
-                {heroData?.links?.pages.map((pageId: number, index: number) => {
+            <LinkWrapper className="w-full flex flex-wrap justify-center lg:justify-between py-12 px-32">
+                {heroData?.links?.pages?.map((pageId: number, index: number) => {
                     const page: Page = pages?.find((p: Page) => p.id === pageId);
 
                     return (
-                        <HeroLink
+                        <div
                             key={index}
-                            page={page}
-                        />
+                            className="w-full md:w-1/2 lg:w-1/4 p-2 lg:-mx-8"
+                        >
+                            <HeroLink
+                                key={index}
+                                page={page}
+                                className="mx-auto"
+                            />
+                        </div>
                     );
                 })}
-            </div>
+            </LinkWrapper>
         </Wrapper>
     )
 }
