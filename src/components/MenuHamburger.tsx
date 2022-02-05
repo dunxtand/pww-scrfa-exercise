@@ -9,6 +9,7 @@ const Wrapper = styled.div`
     font-size: 18px;
     color: #fff;
     z-index: 1001;
+    width: 65px;
     &:hover {
         .hamburger:before {
             transform: translateY(0);
@@ -29,26 +30,19 @@ const Hamburger = styled.a<{ open: boolean }>`
     transition-duration: 0.15s;
     transition-property: opacity, filter, -webkit-filter;
     transition: all 0.2s ease-in-out;
-    &:before {
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        content: "";
+    &:hover {
         background-color: ${props => props.open ? ocean : lake};
-        position: absolute;
-        transform: translateY(100%);
-        transition: all .2s ease-in-out;
     }
     .box {
+        display: inline-block;
+        position: relative;
+        margin: 0 auto;
         width: 30px;
         height: 26px;
         @media (min-width: ${$lg}) {
             width: 33px;
             height: 29px;
         }
-        display: inline-block;
-        position: relative;
     }
     .inner, .inner:after, .inner:before {
         display: block;
@@ -105,19 +99,27 @@ export default function MenuHamburger(props: {
     open: boolean
     toggleOpen: () => void;
 }): JSX.Element | null {
+    const {
+        open,
+        toggleOpen
+    } = props;
+
     return (
         <Wrapper id="hamburgerWrapper">
             <Hamburger 
                 className="hamburger flex flex-col justify-center"
-                open={props.open}
-                onClick={props.toggleOpen}
+                open={open}
+                onClick={toggleOpen}
             >
                 <span className="box">
                     <span className="inner"></span>
                 </span>
-                <span>
-                    Menu
-                </span>
+                <div
+                    className="uppercase mt-2 tracking-wider font-semibold"
+                    style={{ fontSize: 12 }}
+                >
+                    {open ? 'Close' : 'Menu'}
+                </div>
             </Hamburger>
         </Wrapper>
     )

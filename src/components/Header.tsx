@@ -1,15 +1,16 @@
 import React, { useEffect, useState, useRef } from 'react';
 import styled from 'styled-components';
 import MenuHamburger from './MenuHamburger';
+import SearchIcon from './SearchIcon';
+import Button from './Button';
 import { useData } from '../hooks';
-import { $md, $lg } from '../style-variables';
+import { ocean, stone, river, $lg } from '../style-variables';
 
 
-export const DK_MENU_ID = 'dk-menu';
 export const DK_MENU_HIDDEN_CLASS = 'fold-up';
 
-export const FOLD_DURATION = 400;
-export const MENU_DURATION = 300;
+const FOLD_DURATION = 400;
+const MENU_DURATION = 300;
 
 
 function getScrollPos () {
@@ -39,39 +40,26 @@ const Wrapper = styled.header<{
 `;
 
 
-const SearchButton = styled.a<{
-  color: string;
-}>`
-  color: ${props => props.color};
-  transition: color ${MENU_DURATION}ms;
-  width: 60px;
-  @media (min-width: ${$md}) {
-    width: 75px;
-  }
-`;
-
-
-const MenuButton = styled.a<{  
-  color: string;
-}>`
-  color: ${props => props.color};
-  border-style: solid;
-  border-color: ${props => props.color};
-  border-width: 1px;
-  @media (min-width: ${$md}) {
-    border-width: 2px;
-  }
-  border-radius: 50%;
-  transition: color ${MENU_DURATION}ms, border ${MENU_DURATION}ms;
-  width: 60px;
-  @media (min-width: ${$md}) {
-    width: 75px;
-  }
-`;
-
-
 const LogoImage = styled.img`
-    width: 100px;
+    width: 90px;
+    height: 90px;
+`;
+
+
+const SearchButton = styled.a<{
+  searchOpen: boolean;
+}>`
+  border: 2px solid ${river};
+  background-color: ${props => props.searchOpen ? river : '#fff'};
+`;
+
+
+const SearchBar = styled.form`
+  background-color: ${river};
+  width: 100%;
+  color: #fff;
+  position: absolute;
+  top: 53px;
 `;
 
 
@@ -97,6 +85,8 @@ export default function DesktopMenu(props: {
 
   const headerData = useData('header');
   const pages = useData('pages');
+
+  const [searchQuery, setSearchQuery] = useState('');
 
   // initial load: set scroll listener
   useEffect(() => {
@@ -139,7 +129,6 @@ export default function DesktopMenu(props: {
 
   return (
     <Wrapper
-      id={DK_MENU_ID}
       color={'#fff'}
       bgColor={'#fff'}
       atTop={atTop}
@@ -150,7 +139,12 @@ export default function DesktopMenu(props: {
         <div className="flex">
             <MenuHamburger
                 open={menuOpen}
-                toggleOpen={() => setMenuOpen(!menuOpen)}
+                toggleOpen={() => {
+                  setMenuOpen(!menuOpen);
+                  if (searchOpen) {
+                    setSearchOpen(false);
+                  }
+                }}
             />
 
             <a
@@ -164,19 +158,31 @@ export default function DesktopMenu(props: {
                 <LogoImage
                     src="/images/RFA Logo Final.png"
                     alt="SCRFA seal"
+                    className="m-4"
                 />
-                <div className="flex flex-col text-black">
-                    <h2 dangerouslySetInnerHTML={{ __html: headerData?.title ?? '' }}/>
+                <div className="flex flex-col justify-center text-black">
+                    <h2
+                      dangerouslySetInnerHTML={{ __html: headerData?.title ?? '' }}
+                      className="font-bold uppercase leading-tight"
+                      style={{
+                        color: ocean,
+                        fontSize: 20
+                      }}
+                    />
                     <span
-                        className="italic"
+                        className="italic font-semibold"
                         dangerouslySetInnerHTML={{ __html: headerData?.subtitle ?? '' }}
+                        style={{
+                          color: stone,
+                          fontSize: 15
+                        }}
                     />
                 </div>
             </a>
         </div>
 
-        <div className="flex">
-            <div className="flex text-black">
+        <div className="relative flex items-center mx-4">
+            <div className="hidden lg:flex mr-4">
                 {headerData?.menu?.pages.map((pageId: number, index: number) => {
                     const page: Page = pages?.find((p: Page) => p.id === pageId);
 
@@ -184,23 +190,48 @@ export default function DesktopMenu(props: {
                         <a
                             key={index}
                             href={page?.link}
-                            className="mx-4"
+                            className="mr-6 uppercase"
+                            style={{ color: ocean }}
                         >
                             {page?.title}
                         </a>
                     );
                 })}
             </div>
-            <a
+
+            <SearchButton
                 href="#"
                 onClick={e => {
                     e.preventDefault();
-                    setMenuOpen(false);
-                    setSearchOpen(true);
+                    setSearchOpen(!searchOpen);
+                    if (menuOpen) {
+                      setMenuOpen(false);
+                    }
                 }}
+                className="p-3"
+                searchOpen={searchOpen}
             >
-                &#x1F50D;
-            </a>
+                <SearchIcon color={searchOpen ? '#fff' : river}/>
+            </SearchButton>
+
+            {searchOpen && (
+              <SearchBar className="p-6 flex justify-between">
+                <input
+                  type="text"
+                  placeholder="Enter search term"
+                  value={searchQuery}
+                  onChange={e => setSearchQuery(e.target.value)}
+                  className="w-full mr-2 pl-4 text-black"
+                />
+                <Button
+                  href={`/search?q=${searchQuery}`}
+                  type="invertedStroke"
+                  color={river}
+                >
+                  Search
+                </Button>
+              </SearchBar>
+            )}
         </div>
       </div>
     </Wrapper>

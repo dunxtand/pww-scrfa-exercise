@@ -11,6 +11,11 @@ const Wrapper = styled.div`
     img {
         width: 100%;
     }
+    h1 {
+        font-size: 30px;
+        max-width: 725px;
+        margin: 0 auto;
+    }
 `;
 
 const LinkWrapper = styled.div`
@@ -39,7 +44,7 @@ export default function Hero(): JSX.Element {
                 >
                     <h1
                         dangerouslySetInnerHTML={{ __html: heroData?.text ?? '' }}
-                        className="text-white"
+                        className="text-white font-bold text-center"
                     />
                 </div>
                 <img
