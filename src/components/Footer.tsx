@@ -4,7 +4,7 @@ import { useData } from '../hooks';
 import { aluminum, tin } from '../style-variables';
 
 
-const Wrapper = styled.div`
+const Wrapper = styled.footer`
     background-color: ${ocean};
     color: ${aluminum};
 `;

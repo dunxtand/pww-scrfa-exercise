@@ -1,46 +1,45 @@
-# Getting Started with Create React App
+# Design Artifact to HTML Exercise
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+I spent about 10 hours total working through this exercise, over the course of a few days. My time was split between, in (general) order:
 
-## Available Scripts
+- Parsing out and structuring the data present in the design artifact
+- Creating a component structure that reflects the structure in the design artifact, and adding adding content
+- Styling the components (over a few rounds) to reflect the design artifact
+- Testing styles on different screen sizes
+- Checking for accessibility concerns
 
-In the project directory, you can run:
+### Notes
 
-### `npm start`
+- Most of the responsive design was done [via Tailwind](https://tailwindcss.com/docs/responsive-design)
+- I set up a mock "database" with [JSON files in /public/data](https://github.com/dunxtand/pww-scrfa-exercise/tree/main/public/data), that the frontend connects to [via a fetch request](https://github.com/dunxtand/pww-scrfa-exercise/blob/main/src/hooks/useData.tsx).
+- I [gave names](https://github.com/dunxtand/pww-scrfa-exercise/blob/main/src/style-variables/colors.ts) to the colors in the color palette.
+- I used the live site a guide for some hover states and for grabbing a few asset URLs
+- A couple of components, like the menu hamburger and the header, were adapted from code I already had ready from previous projects
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Testing
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+```
+git clone https://github.com/dunxtand/pww-scrfa-exercise.git
+cd pww-scrfa-exercise
+npm install
+npm start
+```
 
-### `npm test`
+### Main Tools
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- [TypeScript](https://www.typescriptlang.org/)
+- [React](https://reactjs.org/)
+- [create-react-app](https://create-react-app.dev/)
+- [styled-components](https://styled-components.com/)
+- [Tailwind CSS](https://tailwindcss.com/)
 
-### `npm run build`
+### Improvements
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+If I had more time to work on this project, I would have:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Created a caching mechanism for fetching the data, to avoid repeated fetch calls
+- Used the design artifact to create a standardized set of components for things like headings, to standardize font sizes, etc
+- Made the rest of the components specified but not included in pages shown (i.e., forms)
+- Gone further into testing and developing for accessibility
+- Added a separate mobile menu with dropdowns for categorized menu items
+- Added entry animations and more hover states
