@@ -47,8 +47,11 @@ export default function Footer(): JSX.Element {
 
             <div className="w-full lg:w-1/3 my-6 lg:my-0">
                 {footerData?.addresses?.map((address: any, index: number) => (
-                    <div
+                    <a
                         key={index}
+                        href={`https://maps.google.com?q=${encodeURIComponent(`${address.line1} ${address.line2}`)}`}
+                        target="_blank"
+                        rel="noreferrer"
                         className="flex flex-col mb-4"
                     >
                         <div
@@ -62,7 +65,7 @@ export default function Footer(): JSX.Element {
                             <br/>
                             <span>{address.line2}</span>
                         </p>
-                    </div>
+                    </a>
                 ))}
             </div>
         </Wrapper>
