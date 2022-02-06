@@ -86,9 +86,12 @@ export default function EventCard(props: {
                 </div>
 
                 {event.phone && (
-                    <div className="my-px">
+                    <a
+                        href={`tel:${event.phone}`}
+                        className="my-px"
+                    >
                         {event.phone}
-                    </div>
+                    </a>
                 )}
             </div>
         </div>

@@ -35,8 +35,12 @@ const SidebarItem = styled.div`
 
 export default function Menu(props: {
     open: boolean;
+    closeMenu: () => void;
 }): JSX.Element {
-    const { open } = props;
+    const {
+        open,
+        closeMenu
+    } = props;
 
     const headerData = useData('header');
     const pages = useData('pages');
@@ -57,12 +61,13 @@ export default function Menu(props: {
                 style={{ backgroundColor: platinum }}
             >
                 {headerData?.submenu?.sidebar?.pages?.map((pageId: number, index: number) => {
-                    const page: Page = pages?.find((p: Page) => p.id === pageId);
+                    const page = pages?.find((p: Page) => p.id === pageId);
 
                     return !page ? null : (
                         <a
                             key={index}
                             href={page.link}
+                            tabIndex={open ? 0 : -1}
                         >
                             <SidebarItem
                                 key={index}
@@ -88,17 +93,26 @@ export default function Menu(props: {
                             <a
                                 href={page.link}
                                 className="mb-4"
+                                tabIndex={open ? 0 : -1}
                             >
                                 <NewsTitle fontSize={20}>
                                     {page.title}
                                 </NewsTitle>
                             </a>
                             
-                            {children?.map((child: Page, index: number) => (
+                            {children?.map((child: Page, childIndex: number) => (
                                 <a
-                                    key={index}
+                                    key={childIndex}
                                     href={child.link}
                                     className="child-item my-1"
+                                    tabIndex={open ? 0 : -1}
+                                    onBlur={() => {
+                                        const lastIndex = headerData.submenu.expanded.pages.length - 1;
+                                        const lastChildIndex = children.length - 1;
+                                        if (index === lastIndex && childIndex === lastChildIndex) {
+                                            closeMenu();
+                                        }
+                                    }}
                                 >
                                     {child.title}
                                 </a>

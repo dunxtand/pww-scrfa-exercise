@@ -7,8 +7,6 @@ export default function Menus(): JSX.Element {
     const [searchOpen, setSearchOpen] = useState(false);
     const [menuOpen, setMenuOpen] = useState(false);
 
-    const closeMenu = () => setMenuOpen(false);
-
     return (
         <>
             <Header
@@ -17,7 +15,10 @@ export default function Menus(): JSX.Element {
                 menuOpen={menuOpen}
                 setMenuOpen={setMenuOpen}
             />
-            <Menu open={menuOpen}/>
+            <Menu
+                open={menuOpen}
+                closeMenu={() => setMenuOpen(false)}
+            />
         </>
     );
 }
