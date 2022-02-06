@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import Tag from './Tag';
 import { useData } from '../hooks';
-import { bark, platinum } from '../style-variables';
+import { bark, platinum, slate } from '../style-variables';
 
 
 const DateBadge = styled.div`
@@ -35,7 +35,10 @@ export default function EventCard(props: {
     const time = `${hour}:${date.getMinutes()} ${date.getHours() >= 12 ? 'pm' : 'am'}`;
 
     return (
-        <div className={`flex ${className}`}>
+        <div
+            className={`flex ${className}`}
+            style={{ color: slate }}
+        >
             <div className="pr-4">
                 <DateBadge className="text-center px-3 py-4">
                     <div className="month uppercase font-semibold">
@@ -51,18 +54,27 @@ export default function EventCard(props: {
                 className="flex flex-col pb-4"
                 style={{ borderBottom: `2px solid ${platinum}` }}
             >
-                <div className="flex mb-2">
-                    {event.tags.map((tagId, index) => {
-                        const tag: Tag = tags?.find((t: Tag) => t.id === tagId);
+                {event.tags.length > 0 && (
+                    <div className="flex mb-2">
+                        {event.tags.map((tagId, index) => {
+                            const tag: Tag = tags?.find((t: Tag) => t.id === tagId);
 
-                        return !tag ? null : (
-                            <Tag
-                                key={index}
-                                tag={tag}
-                                className="mr-2"
-                            />
-                        );
-                    })}
+                            return !tag ? null : (
+                                <Tag
+                                    key={index}
+                                    tag={tag}
+                                    className="mr-2"
+                                />
+                            );
+                        })}
+                    </div>
+                )}
+
+                <div
+                    className="font-bold"
+                    style={{ fontSize: 20 }}
+                >
+                    {event.title}
                 </div>
 
                 <div className="my-px">

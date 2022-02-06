@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import SVG from 'react-inlinesvg';
-import { lake } from '../style-variables'
+import { ocean } from '../style-variables'
 
 
 const Wrapper = styled.a`
@@ -9,8 +9,9 @@ const Wrapper = styled.a`
     border-color: #fff;
     width: 250px;
     height: 250px;
+    color: ${ocean};
     &:hover {
-        border-color: ${lake};
+        border-color: ${ocean};
     }
 `;
 
@@ -33,7 +34,7 @@ export default function HeroLink(props: {
                 src={`/icons/${page?.icon}.svg`}
                 width={100}
             />
-            <div className="uppercase pt-6">
+            <div className="uppercase pt-6 text-center font-bold tracking-wider">
                 {page?.title}
             </div>
         </Wrapper>

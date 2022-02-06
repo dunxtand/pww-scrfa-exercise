@@ -1,4 +1,3 @@
-import React from 'react';
 import styled, { css } from 'styled-components'
 import { $lg, ocean, lake, river } from '../style-variables'
 
@@ -15,9 +14,12 @@ const Wrapper = styled.div`
             transform: translateY(0);
         }
     }
-`
+`;
 
-const Hamburger = styled.a<{ open: boolean }>`
+
+const Hamburger = styled.a<{
+    open: boolean
+}>`
     height: 100%;
     cursor: pointer;
     z-index: 101;
@@ -110,6 +112,12 @@ export default function MenuHamburger(props: {
                 className="hamburger flex flex-col justify-center"
                 open={open}
                 onClick={toggleOpen}
+                onKeyPress={e => {
+                    if (e.key === 'Enter') {
+                        toggleOpen();
+                    }
+                }}
+                tabIndex={0}
             >
                 <span className="box">
                     <span className="inner"></span>

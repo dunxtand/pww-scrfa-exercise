@@ -37,12 +37,30 @@ const Wrapper = styled.header<{
       transform: translateY(-105%); // 105% to hide drop shadow
     }
   }
+  h2 {
+    color: ${ocean};
+    font-size: 14px;
+    @media(min-width: ${$lg}) {
+      font-size: 20px;
+    }
+    & + span {
+      color: ${stone};
+      font-size: 10px;
+      @media(min-width: ${$lg}) {
+        font-size: 15px;
+      }
+    }
+  }
 `;
 
 
 const LogoImage = styled.img`
+  width: 70px;
+  height: 70px;
+  @media(min-width: ${$lg}) {
     width: 90px;
     height: 90px;
+  }
 `;
 
 
@@ -164,18 +182,10 @@ export default function DesktopMenu(props: {
                     <h2
                       dangerouslySetInnerHTML={{ __html: headerData?.title ?? '' }}
                       className="font-bold uppercase leading-tight"
-                      style={{
-                        color: ocean,
-                        fontSize: 20
-                      }}
                     />
                     <span
                         className="italic font-semibold"
                         dangerouslySetInnerHTML={{ __html: headerData?.subtitle ?? '' }}
-                        style={{
-                          color: stone,
-                          fontSize: 15
-                        }}
                     />
                 </div>
             </a>
@@ -208,7 +218,7 @@ export default function DesktopMenu(props: {
                       setMenuOpen(false);
                     }
                 }}
-                className="p-3"
+                className="hidden lg:flex p-3"
                 searchOpen={searchOpen}
             >
                 <SearchIcon color={searchOpen ? '#fff' : river}/>

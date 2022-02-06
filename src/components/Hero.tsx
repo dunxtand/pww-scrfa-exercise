@@ -1,7 +1,8 @@
-import React from 'react';
+import { useState } from 'react';
 import styled from 'styled-components';
 import Button from './Button';
 import HeroLink from './HeroLink';
+import SearchIcon from './SearchIcon';
 import { useData } from '../hooks';
 import { steel } from '../style-variables';
 
@@ -10,11 +11,15 @@ const Wrapper = styled.div`
     padding-top: 100px;
     img {
         width: 100%;
+        min-height: 500px;
     }
-    h1 {
-        font-size: 30px;
-        max-width: 725px;
+    .hero-text {
+        width: 725px;
+        max-width: 90vw;
         margin: 0 auto;
+        h1 {
+            font-size: 30px;
+        }
     }
 `;
 
@@ -26,6 +31,8 @@ const LinkWrapper = styled.div`
 
 
 export default function Hero(): JSX.Element {
+    const [searchQuery, setSearchQuery] = useState('');
+
     const heroData = useData('hero');
     const pages = useData('pages');
 
@@ -40,12 +47,33 @@ export default function Hero(): JSX.Element {
                         top: '50%',
                         transform: 'translateY(-50%)'
                     }}
-                    className="relative flex justify-center items-center"
+                    className="hero-text relative flex flex-col justify-center items-center mx-4"
                 >
                     <h1
                         dangerouslySetInnerHTML={{ __html: heroData?.text ?? '' }}
-                        className="text-white font-bold text-center"
+                        className="text-white font-semibold text-center mb-8"
                     />
+                    <form className="w-full flex justify-between">
+                        <input
+                            type="text"
+                            placeholder="Search rfa.sc.gov"
+                            value={searchQuery}
+                            onChange={e => setSearchQuery(e.target.value)}
+                            className="w-full mr-2 pl-4 text-black"
+                        />
+                        <Button
+                            href={`/search?q=${searchQuery}`}
+                            className="flex items-center"
+                        >
+                            <div className="mr-2">
+                                Search
+                            </div>
+                            <SearchIcon
+                                color="#fff"
+                                size={20}
+                            />
+                        </Button>
+                    </form>
                 </div>
                 <img
                     src="/images/hero.jpg"

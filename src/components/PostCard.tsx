@@ -1,6 +1,7 @@
 import Link from './Link';
 import Tag from './Tag';
 import { useData } from '../hooks';
+import { concrete, sidewalk, slate } from '../style-variables';
 
 
 export default function PostCard(props: {
@@ -32,16 +33,27 @@ export default function PostCard(props: {
             {post.text && (
                 <div
                     dangerouslySetInnerHTML={{ __html: post.text }}
-                    className="mb-2"
+                    className="mb-2 font-semibold"
+                    style={{ color: slate }}
                 />
             )}
             <div className="flex">
                 <div>
-                    <span className="text-bold mr-1">Published:</span>
-                    <span>{formattedDate}</span>
+                    <span
+                        className="font-bold mr-1"
+                        style={{ color: concrete }}
+                    >
+                        Published:
+                    </span>
+                    <span
+                        className="font-semibold"
+                        style={{ color: sidewalk }}
+                    >
+                        {formattedDate}
+                    </span>
                 </div>
                 {post.tags.map((tagId, index) => {
-                    const tag: Tag = tags?.find((t: Tag) => t.id === tagId);
+                    const tag = tags?.find((t: Tag) => t.id === tagId);
 
                     return !tag ? null : (
                         <Tag

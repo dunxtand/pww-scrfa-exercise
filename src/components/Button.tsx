@@ -1,4 +1,3 @@
-import React from 'react';
 import styled, { css } from 'styled-components';
 import { river, sky, steel } from '../style-variables';
 
@@ -66,13 +65,15 @@ export default function Button (props: {
     disabled?: boolean;
     color?: string;
     children: React.ReactNode;
+    className?: string;
 }): JSX.Element {
     const {
         type = 'solid',
         href,
         disabled = false,
         color = sky,
-        children
+        children,
+        className = ''
     } = props;
 
     return (
@@ -81,7 +82,7 @@ export default function Button (props: {
             type={type}
             disabled={disabled}
             color={color}
-            className="px-5 py-4 font-semibold tracking-wider"
+            className={`px-5 py-4 font-semibold tracking-wider ${className}`}
         >
             {children}
         </StyledButton>
