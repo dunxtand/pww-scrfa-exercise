@@ -12,7 +12,6 @@ I spent about 10 hours total working through this exercise, over the course of a
 
 - Most of the responsive design was done [via Tailwind](https://tailwindcss.com/docs/responsive-design)
 - I set up a mock "database" with [JSON files in /public/data](https://github.com/dunxtand/pww-scrfa-exercise/tree/main/public/data), that the frontend connects to [via a fetch request](https://github.com/dunxtand/pww-scrfa-exercise/blob/main/src/hooks/useData.tsx).
-- I [gave names](https://github.com/dunxtand/pww-scrfa-exercise/blob/main/src/style-variables/colors.ts) to the colors in the color palette.
 - I used the live site a guide for some hover states and for grabbing a few asset URLs
 - A couple of components, like the menu hamburger and the header, were adapted from code I already had ready from previous projects
 
@@ -43,3 +42,5 @@ If I had more time to work on this project, I would have:
 - Gone further into testing and developing for accessibility
 - Added a separate mobile menu with dropdowns for categorized menu items
 - Added entry animations and more hover states
+- Made sure the colors I used match up exactly to the colors in the design
+- Created an autocomplete feature that matched pages / posts to user input in search forms
