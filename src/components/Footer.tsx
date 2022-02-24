@@ -17,7 +17,7 @@ export default function Footer(): JSX.Element {
     return (
         <Wrapper className="px-10 sm:px-16 md:px-20 lg:px-32 py-10 flex flex-wrap justify-between">
             <div className="w-full lg:w-1/3 my-6 lg:my-0 flex flex-col">
-                <h4
+                <div
                     dangerouslySetInnerHTML={{ __html: footerData?.title ?? '' }}
                     className="font-bold mb-6 tracking-wider"
                     style={{ fontSize: 20 }}

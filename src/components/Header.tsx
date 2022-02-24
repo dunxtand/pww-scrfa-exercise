@@ -4,7 +4,7 @@ import MenuHamburger from './MenuHamburger';
 import SearchIcon from './SearchIcon';
 import Button from './Button';
 import { useData, useOuterClick } from '../hooks';
-import { ocean, stone, river, $lg } from '../style-variables';
+import { ocean, river, $lg } from '../style-variables';
 
 
 export const DK_MENU_HIDDEN_CLASS = 'fold-up';
@@ -44,7 +44,8 @@ const Wrapper = styled.header<{
       font-size: 20px;
     }
     & + span {
-      color: ${stone};
+      color: ${ocean};
+      opacity: .75;
       font-size: 10px;
       @media(min-width: ${$lg}) {
         font-size: 15px;
@@ -216,6 +217,7 @@ export default function DesktopMenu(props: {
 
             <SearchButton
                 href="#"
+                aria-label="Search"
                 onClick={e => {
                     e.preventDefault();
                     setSearchOpen(!searchOpen);
