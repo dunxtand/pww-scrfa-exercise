@@ -14,6 +14,7 @@ const Wrapper = styled.div<{
     @media(max-width: ${$lg}) {
         right: 0;
         bottom: 0;
+        transform: translateY(${props => props.open ? '95px' : '-100%'});
     }
     transform: translateY(${props => props.open ? '120px' : '-100%'});
     transition: transform .3s;

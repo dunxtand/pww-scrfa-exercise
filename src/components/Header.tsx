@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import MenuHamburger from './MenuHamburger';
 import SearchIcon from './SearchIcon';
 import Button from './Button';
-import { useData } from '../hooks';
+import { useData, useOuterClick } from '../hooks';
 import { ocean, stone, river, $lg } from '../style-variables';
 
 
@@ -95,6 +95,11 @@ export default function DesktopMenu(props: {
   } = props;
 
   const headerRef = useRef(null);
+  const searchBarRef = useOuterClick(() => {
+    if (searchOpen) {
+        setSearchOpen(false);
+    }
+});
 
   const [show, setShow] = useState(true);
   const [lastScrollTop, setLastScrollTop] = useState(0);
@@ -225,7 +230,10 @@ export default function DesktopMenu(props: {
             </SearchButton>
 
             {searchOpen && (
-              <SearchBar className="p-6 flex justify-between">
+              <SearchBar
+                ref={searchBarRef}
+                className="p-6 flex justify-between"
+              >
                 <input
                   type="text"
                   placeholder="Enter search term"

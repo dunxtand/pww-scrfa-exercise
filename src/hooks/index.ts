@@ -1,6 +1,8 @@
 import useData from './useData';
+import useOuterClick from './useOuterClick';
 
 
 export {
-    useData
+    useData,
+    useOuterClick
 }

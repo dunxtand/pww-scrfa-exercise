@@ -11,7 +11,7 @@ const Button = styled.div`
     .chevron {
         font-size: 50px;
         transform: rotate(-90deg);
-        margin-right: 7px;
+        margin-right: 10px;
     }
 `;
 
