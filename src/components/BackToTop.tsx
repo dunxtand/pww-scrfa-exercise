@@ -24,11 +24,8 @@ export default function BackToTop(props: {
     } = props;
 
     return (
-        <a
-            href="#"
-            onClick={e => {
-                e.preventDefault();
-                // @todo: polyfill for Safari
+        <button
+            onClick={() => {
                 window.scroll({ top: 0, left: 0, behavior: 'smooth' });
             }}
             className={`flex items-center ${className}`}
@@ -41,6 +38,6 @@ export default function BackToTop(props: {
                     &rsaquo;
                 </div>
             </Button>
-        </a>
+        </button>
     );
 }

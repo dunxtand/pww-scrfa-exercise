@@ -8,10 +8,6 @@ export default function useData(type: DataType) {
     const [data, setData] = useState<any>(null);
 
     useEffect(() => {
-        if (data) {
-            return;
-        }
-
         fetch(`/data/${type}.json`).then(res => {
             if (!res.ok) {
                 return res.json().then(errJson => {
